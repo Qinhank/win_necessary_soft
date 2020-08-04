@@ -26,12 +26,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
         
     - name: Install dependencies
-      run: npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install && npm run build
+      run: npm install && npm run build
 
     - name: push
       run:
         cd gh-pages
-        ls
         git init
         git config user.name "hank.qin1994"
         git config user.email "hank.qin1994@gmail.com"
