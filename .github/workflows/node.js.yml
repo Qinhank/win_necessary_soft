@@ -24,11 +24,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm run build --if-present
-    - run: git init
-    - run: git config user.name "hank.qin1994"
-    - run: git config user.email "hank.qin1994@gmail.com"
-    - run: git add .
-    - run: git commit -m "Update docs"
-    - run: git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: build
+        BUILD_SCRIPT: npm install && npm run build
