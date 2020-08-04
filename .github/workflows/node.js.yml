@@ -33,4 +33,4 @@ jobs:
         BRANCH: gh-pages
         FOLDER: gh-pages
         CLEAN_EXCLUDE: '["CNAME"]'
-        BUILD_SCRIPT: npm config set puppeteer_download_host = https://npm.taobao.org/mirrors && npm install && npm run build
+        BUILD_SCRIPT: npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install && npm run build
