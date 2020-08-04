@@ -1,0 +1,107 @@
+/** 
+ * @Author: hankqin 
+ * @Date: 2020-02-16 01:05:30 
+ * @Desc:  用于全局样式的定义
+ */
+
+ $active: #0b8cfb;
+ $default: #333;
+ $grey: #999;
+ $grey2: #ccc;
+ $grey3: #666;
+ $red: #e84a5f;
+ $green: #18c66c;
+ //纯色
+ $white: white;
+ $black: black;
+
+//图标
+@import url('//at.alicdn.com/t/font_1641654_thfg54uzh2b.css');
+
+//mixin
+@import './mixin.scss';
+
+//基础布局
+body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, p, h1, h2, h3, h4,h5, h6, i, b, textarea, figure, figcaption{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-style: normal;
+  text-decoration: none;
+  border: none;
+  font-weight: normal;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-tap-highlight-color:transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: $active;
+  cursor: pointer;
+  &:hover{
+    color: #1b6ca8;
+  }
+}
+
+.iconfont{
+  font-size: 12px;
+}
+
+.noContent{
+  text-align: center;
+  color: #999;
+  padding: 50px 0;
+}
+
+img{
+  content: normal !important;
+}
+
+/*清除浮动*/
+.clearfix{
+	zoom:1;
+	&:before,&:after{
+		content: " ";
+    display: block;
+    clear: both;
+    height: 0;
+	}
+}
+
+/*隐藏*/
+.hidden{
+	display: none;
+}
+
+/*列表无默认样式*/
+.list{
+  &-unstyled{
+    list-style:none;
+    margin:0;
+    padding-left:0;
+  }
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/*打印机设置*/
+@media print{
+  a:link:after{content:""}
+  @page{
+    size:A4 portrait;
+    margin:0.5cm;
+  }
+  @page :first{margin-top:0}
+  h1,h2,h3,h4,h5,h6{page-break-after:avoid;page-break-inside:avoid}
+  img{page-break-inside:avoid;-webkit-filter:grayscale(100%);filter:grayscale(100%)}
+  table{page-break-inside:avoid}
+  thead{display:table-header-group;font-weight:bold}
+  .print-50{
+    width: 50%;
+  }
+}
