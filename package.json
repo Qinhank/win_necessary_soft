@@ -6,7 +6,7 @@
     "init": "node src/server/api.js && vue-cli-service serve --mode dev1",
     "dev": "vue-cli-service serve --mode dev1",
     "dev2": "vue-cli-service serve --mode dev2",
-    "build": "node static/ngconf.js && vue-cli-service build --mode pro",
+    "build": "vue-cli-service build --mode pro",
     "lint": "eslint --ext .js,.vue src --fix",
     "mock": "node src/server/mock.js",
     "api": "node src/server/api.js"
