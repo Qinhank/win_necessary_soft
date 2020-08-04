@@ -32,5 +32,6 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BRANCH: gh-pages
         FOLDER: gh-pages
+        CLEAN: true
         CLEAN_EXCLUDE: '["CNAME"]'
         BUILD_SCRIPT: npm install && npm run build
