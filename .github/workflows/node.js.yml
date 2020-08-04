@@ -29,13 +29,14 @@ jobs:
       run: npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install && npm run build
 
     - name: push
-    - run: cd gh-pages
-    - run: git init
-    - run: git config user.name "hank.qin1994"
-    - run: git config user.email "hank.qin1994@gmail.com"
-    - run: git add .
-    - run: git commit -m "Update docs"
-    - run: git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+      run: |
+        cd gh-pages
+        git init
+        git config user.name "hank.qin1994"
+        git config user.email "hank.qin1994@gmail.com"
+        git add .
+        git commit -m "Update docs"
+        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
       env:
         GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         GH_REF: github.com/Qinhank/win_necessary_soft.git
