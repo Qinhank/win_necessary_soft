@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -25,18 +25,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         
-    - name: Install dependencies
-      run: npm install && npm run build
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
 
-    - name: push
-      run:
-        cd gh-pages
-        git init
-        git config user.name "hank.qin1994"
-        git config user.email "hank.qin1994@gmail.com"
-        git add .
-        git commit -m "Update docs"
-        git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
       env:
-        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        GH_REF: github.com/Qinhank/win_necessary_soft.git
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: gh-pages
+        CLEAN_EXCLUDE: '["CNAME"]'
+        BUILD_SCRIPT: npm install && npm run build
