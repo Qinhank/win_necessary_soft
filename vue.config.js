@@ -1,18 +1,6 @@
 
 const { proxy, port, alias, title, useCDN, cdn } = require('./static/config')
-const path = require('path')
-const fs = require('fs')
 const { DynamicImportCdnPlugin } = require('webpack-dynamic-import-cdn-plugin')
-const PrerenderSPAPlugin = require('prerender-spa-plugin')
-
-// 将view文件下的子文件遍历并生成routers
-const loopViews = (name) => {
-  const directory = `./src/${name || 'views'}`
-  const arr = fs.readdirSync(directory)
-  return arr.map(_ => {
-    return `/${ _.replace('.vue', '') }`
-  })
-}
 
 module.exports = {
   outputDir: 'gh-pages',
@@ -36,12 +24,7 @@ module.exports = {
           url: `${cdn}/npm/element.min.js`
         }
       }
-    })] : [], new PrerenderSPAPlugin({
-      // Required - The path to the webpack-outputted app to prerender.
-      staticDir: path.join(__dirname, 'gh-pages'),
-      // Required - Routes to render.
-      routes: [ '/', ...loopViews() ]
-    }) ]
+    })] : []]
   },
   chainWebpack: config => {
     config
