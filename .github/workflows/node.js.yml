@@ -29,10 +29,13 @@ jobs:
       run: npm install -g cnpm --registry=https://registry.npm.taobao.org && cnpm install && npm run build
 
     - name: push
-      uses: github-actions-x/commit@v2.6
-      with:
-        github-token: ${{ secrets.ACCESS_TOKEN }}
-        push-branch: 'gh-pages'
-        files:  'gh-pages/*'
-        commit-message: 'update'
-        rebase: 'true' # pull abd rebase before commit
+    - run: cd gh-pages
+    - run: git init
+    - run: git config user.name "hank.qin1994"
+    - run: git config user.email "hank.qin1994@gmail.com"
+    - run: git add .
+    - run: git commit -m "Update docs"
+    - run: git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+      env:
+        GH_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        GH_REF: github.com/Qinhank/win_necessary_soft.git
