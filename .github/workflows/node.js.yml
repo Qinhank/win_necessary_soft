@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     strategy:
       matrix:
@@ -33,4 +33,4 @@ jobs:
         BRANCH: gh-pages
         FOLDER: gh-pages
         CLEAN_EXCLUDE: '["CNAME"]'
-        BUILD_SCRIPT: npm install && npm run build
+        BUILD_SCRIPT: npm config set puppeteer_download_host = https://npm.taobao.org/mirrors && npm install && npm run build
