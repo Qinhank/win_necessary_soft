@@ -7,10 +7,6 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/home'
-  },
-  {
-    path: '/home',
     name: 'home',
     meta: {
       title: '主页'

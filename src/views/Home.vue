@@ -86,7 +86,8 @@
     </t-card>
     <el-tabs v-model="activeName">
       <el-tab-pane label="日常使用" name="daily"></el-tab-pane>
-      <el-tab-pane label="开发者必备" name="second"></el-tab-pane>
+      <el-tab-pane label="待深度体验" name="waitUse"></el-tab-pane>
+      <el-tab-pane label="开发者必备" name="dev"></el-tab-pane>
     </el-tabs>
     <t-card class="bottom">
       <div class="head">
@@ -98,10 +99,10 @@
       <div class="content">
         <div class="content-item" v-for="(item, index) in data[activeName]" :key="index">
           <div class="content-item-text">{{ item.name }}</div>
-          <div class="content-item-text">{{ item.des }}</div>
+          <div class="content-item-text" style="padding-right: 20px">{{ item.des }}</div>
           <div class="content-item-text">{{ item.version }}</div>
           <div class="content-item-btn">
-            <el-button type="primary" @click="go2(item.down)">立即下载</el-button>
+            <el-button type="primary" @click="go2(item.down)" :disabled="!item.down">{{ item.down ? '立即下载' : '暂无下载' }}</el-button>
             <el-button @click="go2(item.link)">访问官方</el-button>
           </div>
         </div>
