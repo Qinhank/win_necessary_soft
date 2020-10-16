@@ -85,9 +85,7 @@
       </div>
     </t-card>
     <el-tabs v-model="activeName">
-      <el-tab-pane label="日常使用" name="daily"></el-tab-pane>
-      <el-tab-pane label="待深度体验" name="waitUse"></el-tab-pane>
-      <el-tab-pane label="开发者必备" name="dev"></el-tab-pane>
+      <el-tab-pane :label="item.name" :name="`${index}`" v-for="(item, index) in data" :key="index"></el-tab-pane>
     </el-tabs>
     <t-card class="bottom">
       <div class="head">
@@ -97,7 +95,7 @@
         <div class="head-item">操作</div>
       </div>
       <div class="content">
-        <div class="content-item" v-for="(item, index) in data[activeName]" :key="index">
+        <div class="content-item" v-for="(item, index) in data[activeName-0].softs" :key="index">
           <div class="content-item-text">{{ item.name }}</div>
           <div class="content-item-text" style="padding-right: 20px">{{ item.des }}</div>
           <div class="content-item-text">{{ item.version }}</div>
@@ -117,7 +115,7 @@ export default {
   data () {
     return {
       data,
-      activeName: 'daily'
+      activeName: '0'
     }
   },
   methods: {
