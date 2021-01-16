@@ -254,11 +254,32 @@ const data = [
         link: 'https://www.charlesproxy.com/download/'
       },
       {
+        name: 'wireshark',
+        des: '另一款抓包工具',
+        version: '3.4.2',
+        down: 'https://1.as.dl.wireshark.org/win64/Wireshark-win64-3.4.2.exe',
+        link: 'https://www.wireshark.org/'
+      },
+      {
         name: 'mobaxterm',
         des: 'SSH登录好帮手',
         version: '20.3',
         down: 'https://download.mobatek.net/2032020060430358/MobaXterm_Portable_v20.3.zip',
         link: 'https://mobaxterm.mobatek.net/download-home-edition.html'
+      },
+      {
+        name: 'termius',
+        des: '全平台的ssh登录工具',
+        version: '7.3.2',
+        down: 'https://termi.us/win',
+        link: 'https://www.termius.com/windows'
+      },
+      {
+        name: 'cmder',
+        des: '替代win原生的cmd窗口，非常好用',
+        version: '1.3.17',
+        down: 'https://github.com/cmderdev/cmder/releases/download/v1.3.17/cmder_mini.zip',
+        link: 'https://cmder.net/'
       },
       {
         name: 'Navicat for MySQL',
