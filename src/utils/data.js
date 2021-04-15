@@ -275,6 +275,13 @@ const data = [
         link: 'https://www.termius.com/windows'
       },
       {
+        name: 'electerm',
+        des: 'github上开源的全平台的ssh登录工具',
+        version: '1.12.15',
+        down: 'https://github.com/electerm/electerm/releases/download/v1.12.15/electerm-1.12.15-win-x64.tar.gz',
+        link: 'https://github.com/electerm/electerm'
+      },
+      {
         name: 'cmder',
         des: '替代win原生的cmd窗口，非常好用',
         version: '1.3.17',
