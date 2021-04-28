@@ -92,6 +92,13 @@ const data = [
         version: '4.6.3.1104',
         down: 'https://dldir1.qq.com/qqyy/pc/QQPlayerSetup4.6.3.1104.exe',
         link: 'https://player.qq.com/'
+      },
+      {
+        name: 'Quicker',
+        des: '您的指尖工具箱，操作更少，收获更多！',
+        version: '1.24.7',
+        down: 'https://files.getquicker.net/_productfiles/202104/Quicker.x64.1.24.7.0.msi',
+        link: 'https://getquicker.net/'
       }
     ]
   },
