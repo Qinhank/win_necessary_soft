@@ -113,8 +113,8 @@ const data = [
         version: '1.24.7',
         down: 'https://files.getquicker.net/_productfiles/202104/Quicker.x64.1.24.7.0.msi',
         link: 'https://getquicker.net/',
-      },
-    ],
+      }
+    ]
   },
   {
     name: '通讯工具',
@@ -160,8 +160,8 @@ const data = [
         version: 'newest',
         down: 'https://telegram.org/dl/desktop/win',
         link: 'https://telegram.org/',
-      },
-    ],
+      }
+    ]
   },
   {
     name: '可选装',
@@ -207,8 +207,8 @@ const data = [
         version: 'newest',
         down: 'https://t1.daumcdn.net/potplayer/PotPlayer/Version/Latest/PotPlayerSetup64.exe',
         link: 'https://potplayer.daum.net/',
-      },
-    ],
+      }
+    ]
   },
   {
     name: '系统工具',
@@ -261,8 +261,8 @@ const data = [
         version: '2.9.1051.127',
         down: 'https://pm.myapp.com/invc/xfspeed/qqpcmgr/data/DeskGo_2_9_1051_127_lite.exe',
         link: 'https://guanjia.qq.com/product/zmzl/',
-      },
-    ],
+      }
+    ]
   },
   {
     name: '开发工具',
@@ -392,8 +392,8 @@ const data = [
         version: '3.4.6',
         down: 'https://product-downloads.atlassian.com/software/sourcetree/windows/ga/SourceTreeSetup-3.4.6.exe',
         link: 'https://www.sourcetreeapp.com/',
-      },
-    ],
+      }
+    ]
   },
   {
     name: '油猴插件',
@@ -404,9 +404,9 @@ const data = [
         version: '2021.10.25',
         down: 'http://h.hankqin.com:8082/api/public/dl/bY5C9dl-/tampermonkey-backup-chrome-2021-10-29T07-58-39-785Z.zip',
         link: null,
-      },
-    ],
-  },
+      }
+    ]
+  }
 ]
 
 export default data
